@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import 'remixicon/fonts/remixicon.css'
 import styled from 'styled-components'
 import Link from 'next/link'
@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
         <Header>
             <Container>
-                <NavLogo onClick={closeMobileMenu}>Mukdahan</NavLogo>
+                <NavLogo href="#" onClick={closeMobileMenu}>Mukdahan</NavLogo>
                 <NavMenu click={click} >
                     <NavList onClick={handleClick}>
                         <NavListItem>
@@ -73,7 +73,8 @@ const Header = styled.header`
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: hsl(190, 64%, 22%);
+    /* background-color: hsl(190, 64%, 22%); */
+    background-color: transparent;
 `
 
 const Container = styled.nav`
@@ -93,10 +94,11 @@ const Container = styled.nav`
 const NavLogo = styled.a`
     color: #fff;
     font-weight: 600;
+    cursor: pointer;
 `
 
 const NavMenu = styled.div`
-    position: relative;
+    
    
    @media screen and (max-width: 767px) {
         position: fixed;
@@ -111,19 +113,21 @@ const NavMenu = styled.div`
    }
 
    @media screen and (min-width: 768px) {
-       display: flex;
-       column-gap: 1rem;   
+        position: relative;
+        display: flex;
+        column-gap: 1rem;   
    }
 `
 
 const NavList = styled.ul`
     display: flex;
-    column-gap: 4rem;
-    list-style: none;
+    flex-direction: column;
+    row-gap: 2.5rem;
 
-    @media screen and (max-width: 768px) {
-        flex-direction: column;
-        row-gap: 2.5rem;
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        column-gap: 4rem;
+        list-style: none;
     }
 `
 

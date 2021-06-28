@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
         font-size: 0.938rem;
         background-color: hsl(190, 100%, 99%);
         color: hsl(190, 24%, 35%);
+
+        @media screen and (min-height: 721px) {
+            margin: 0;
+        }
     }
 
     h1,
