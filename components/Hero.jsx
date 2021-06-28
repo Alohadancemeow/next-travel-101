@@ -16,7 +16,7 @@ const Hero = () => {
                         <strong>Beautiful <br /> Beaches</strong>
                     </Content>
                     <ExploreBtn>
-                        <Link href="#">
+                        <Link href="#about">
                             <a>Explore</a>
                         </Link>
                     </ExploreBtn>
@@ -51,7 +51,7 @@ const Hero = () => {
                 <InfoBox>
                     <InfoText>
                         <span>5 best places to visit</span>
-                        <Link href="#">
+                        <Link href="#about">
                             <a>
                                 More
                                 <i className="ri-arrow-right-line"></i>
