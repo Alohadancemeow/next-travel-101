@@ -5,6 +5,7 @@ import About from "../components/About"
 import Discover from '../components/Discover'
 import Video from '../components/Video'
 import Contact from '../components/Contact'
+import Experience from "../components/Experience"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <About />
         <Discover />
+        <Experience />
         <Video />
         <Contact />
       </Layout>
