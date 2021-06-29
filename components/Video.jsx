@@ -8,9 +8,6 @@ const Video = () => {
     const [click, setClick] = useState(false)
     console.log(click);
 
-    // # Video file
-    const videoFile = document.getElementById('video-file')
-
     // # Handle click
     const handleClick = () => setClick(!click)
 
@@ -23,27 +20,32 @@ const Video = () => {
         )
     }
 
-    // # Play video
-    const onPlay = () => {
-        if (click) {
-            videoFile.play()
-        } else {
-            videoFile.pause()
+
+    useEffect(() => {
+
+        // # Video file
+        const videoFile = document.getElementById('video-file')
+
+        // # Play video
+        const onPlay = () => {
+            return (
+                click
+                    ? videoFile.play()
+                    : videoFile.pause()
+            )
         }
 
-    }
+        // # Change icon, when video has ended
+        const onVideoEnded = () => {
+            videoFile.addEventListener('ended', () => (
+                setClick(false)
+            ))
+        }
 
-    // # Change icon, when video has ended
-    const onVideoEnded = () => {
-        videoFile.addEventListener('ended', () => (
-            setClick(false)
-        ))
-    }
-
-    // # Call 'em here
-    useEffect(() => {
+        // # Call 'em here
         onPlay()
         onVideoEnded()
+
     }, [click])
 
     return (
