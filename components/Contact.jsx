@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Contact = () => {
     return (
-        <ContactSection>
+        <ContactSection id="contact">
             <ContactBg>
                 <ContactContainer>
                     <ContactText>
