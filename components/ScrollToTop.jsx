@@ -58,7 +58,7 @@ const ScrollUp = styled.div`
     opacity: 0.9;
     transition: 0.4s;
     cursor: pointer;
-    z-index: 100;
+    z-index: 99;
 
     &:hover {
         background-color: hsl(190, 64%, 15%);

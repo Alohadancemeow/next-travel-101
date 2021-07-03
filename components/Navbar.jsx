@@ -1,51 +1,90 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'remixicon/fonts/remixicon.css'
 import styled from 'styled-components'
 import Link from 'next/link'
 
 const Navbar = () => {
 
+    // # Navdata
+    const navData = [
+        {
+            id: 1,
+            title: 'Home',
+            link: '#'
+        },
+        {
+            id: 2,
+            title: 'About',
+            link: '#about'
+        },
+        {
+            id: 3,
+            title: 'Discover',
+            link: '#discover'
+        },
+        {
+            id: 4,
+            title: 'Review',
+            link: '#review'
+        },
+        {
+            id: 5,
+            title: 'Contact',
+            link: '#contact'
+        }
+    ]
+
     // # States
     const [click, setClick] = useState(false)
+    const [scroll, setScroll] = useState(false)
 
     console.log(click);
 
+    // # Mobile icon
     const handleClick = () => setClick(!click)
     const closeMobileMenu = () => setClick(false)
 
+
+    useEffect(() => {
+
+        const onScroll = () => {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY
+
+                scrolled >= 100
+                    ? setScroll(true)
+                    : setScroll(false)
+            })
+        }
+
+        // called
+        onScroll()
+
+    }, [])
+
     return (
-        <Header>
+        <Header scroll={scroll}>
             <Container>
-                <NavLogo href="#" onClick={closeMobileMenu}>Mukdahan</NavLogo>
+                <NavLogo
+                    scroll={scroll}
+                    href="#"
+                    onClick={closeMobileMenu}
+                >
+                    Mukdahan
+                </NavLogo>
                 <NavMenu click={click} >
                     <NavList onClick={handleClick}>
-                        <NavListItem>
-                            <Link href="#">
-                                <a>Home</a>
-                            </Link>
-                        </NavListItem>
-                        <NavListItem>
-                            <Link href="#about">
-                                <a>About</a>
-                            </Link>
-                        </NavListItem>
-                        <NavListItem>
-                            <Link href="#discover">
-                                <a>Discover</a>
-                            </Link>
-                        </NavListItem>
-                        <NavListItem>
-                            <Link href="#review">
-                                <a>Review</a>
-                            </Link>
-                        </NavListItem>
-                        <NavListItem>
-                            <Link href="#contact">
-                                <a>Contact</a>
-                            </Link>
-                        </NavListItem>
+                        {
+                            navData.map(item => (
+                                <NavListItem key={item.id} scroll={scroll}>
+                                    <Link href={item.link}>
+                                        <a>{item.title}</a>
+                                    </Link>
+                                </NavListItem>
+                            ))
+                        }
                     </NavList>
-                    <DarkMode>
+                    <DarkMode scroll={scroll}>
                         <span>Dark Mode</span>
                         <i className="ri-moon-line"></i>
                     </DarkMode>
@@ -54,7 +93,7 @@ const Navbar = () => {
                     </CloseMenu>
                 </NavMenu>
 
-                <MobileMenu onClick={handleClick}>
+                <MobileMenu scroll={scroll} onClick={handleClick}>
                     <i className='ri-function-line'></i>
                 </MobileMenu>
 
@@ -74,7 +113,8 @@ const Header = styled.header`
     left: 0;
     z-index: 100;
     /* background-color: hsl(190, 64%, 22%); */
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: ${({ scroll }) => (scroll ? '#fff' : 'transparent')};
 `
 
 const Container = styled.nav`
@@ -92,21 +132,21 @@ const Container = styled.nav`
 `
 
 const NavLogo = styled.a`
-    color: #fff;
+    /* color: #fff; */
+    color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
     font-weight: 600;
     cursor: pointer;
 `
 
 const NavMenu = styled.div`
     
-   
    @media screen and (max-width: 767px) {
         position: fixed;
         padding: 3rem;
         right: ${({ click }) => (click ? 0 : '-100%')};
         top: 0;
         background-color: hsl(190, 100%, 99%);
-        width: 70%;
+        width: 60%;
         height: 100%;
         box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
         transition: .4s;
@@ -140,17 +180,18 @@ const NavListItem = styled.li`
         text-decoration: none;
 
         &:hover {
-        color: hsl(190, 24%, 35%);
+            color: hsl(190, 24%, 35%);
         }
     }
 
     @media screen and (min-width: 768px) {
         a {
-            color: #fff;
+            /* color: #fff; */
+            color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
             text-transform: initial;
     
             &:hover {
-                color: #fff;
+                color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
             }
         }  
     }
@@ -180,7 +221,7 @@ const DarkMode = styled.div`
         }
         
         i {
-            color: #fff;
+            color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
         }
     }
 `
@@ -188,7 +229,7 @@ const DarkMode = styled.div`
 const MobileMenu = styled.div`
     font-size: 1.2rem;
     cursor: pointer;
-    color: #fff;
+    color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
 
     @media screen and (min-width: 768px) {
         display: none;
