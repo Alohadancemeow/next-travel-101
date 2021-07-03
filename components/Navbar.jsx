@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import 'remixicon/fonts/remixicon.css'
 import styled from 'styled-components'
-import Link from 'next/link'
+// import Link from 'next/link'
+import { Link } from 'react-scroll'
 
 const Navbar = () => {
 
@@ -10,27 +11,27 @@ const Navbar = () => {
         {
             id: 1,
             title: 'Home',
-            link: '#'
+            link: 'home'
         },
         {
             id: 2,
             title: 'About',
-            link: '#about'
+            link: 'about'
         },
         {
             id: 3,
             title: 'Discover',
-            link: '#discover'
+            link: 'discover'
         },
         {
             id: 4,
             title: 'Review',
-            link: '#review'
+            link: 'review'
         },
         {
             id: 5,
             title: 'Contact',
-            link: '#contact'
+            link: 'contact'
         }
     ]
 
@@ -73,24 +74,36 @@ const Navbar = () => {
                     Mukdahan
                 </NavLogo>
                 <NavMenu click={click} >
-                    <NavList onClick={handleClick}>
+                    <NavList>
                         {
                             navData.map(item => (
-                                <NavListItem key={item.id} scroll={scroll}>
-                                    <Link href={item.link}>
-                                        <a>{item.title}</a>
-                                    </Link>
+                                <NavListItem key={item.id}>
+                                    <NavListItemLink
+                                        onClick={handleClick}
+                                        scroll={scroll}
+                                        to={item.link}
+                                        // smooth={true}
+                                        // duration={500}
+                                        spy={true}
+                                        exact="true"
+                                        offset={-80}
+                                    >
+                                        {item.title}
+                                    </NavListItemLink>
                                 </NavListItem>
                             ))
                         }
                     </NavList>
+
                     <DarkMode scroll={scroll}>
                         <span>Dark Mode</span>
                         <i className="ri-moon-line"></i>
                     </DarkMode>
+
                     <CloseMenu onClick={closeMobileMenu}>
                         <i className="ri-close-line"></i>
                     </CloseMenu>
+
                 </NavMenu>
 
                 <MobileMenu scroll={scroll} onClick={handleClick}>
@@ -149,7 +162,7 @@ const NavMenu = styled.div`
         width: 60%;
         height: 100%;
         box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
-        transition: .4s;
+        transition: .6s;
    }
 
    @media screen and (min-width: 768px) {
@@ -174,26 +187,29 @@ const NavList = styled.ul`
 const NavListItem = styled.li`
     font-weight: 600;
     text-transform: uppercase;
+`
 
-    a {
-        color: hsl(190, 8%, 60%);
-        text-decoration: none;
+const NavListItemLink = styled(Link)`
+    cursor: pointer;
+    color: hsl(190, 8%, 60%);
+    text-decoration: none;
 
-        &:hover {
-            color: hsl(190, 24%, 35%);
-        }
+    &:hover {
+        color: hsl(190, 24%, 35%);
+    }
+
+    &.active {
+        border-bottom: 2px solid ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
     }
 
     @media screen and (min-width: 768px) {
-        a {
-            /* color: #fff; */
-            color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
-            text-transform: initial;
+        /* color: #fff; */
+        color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
+        text-transform: initial;
     
-            &:hover {
-                color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
-            }
-        }  
+        &:hover {
+            color: ${({ scroll }) => (scroll ? 'hsl(190, 24%, 35%)' : '#fff')};
+        }
     }
 `
 

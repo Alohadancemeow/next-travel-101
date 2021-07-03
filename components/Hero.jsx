@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const Hero = () => {
     return (
-        <HeroContainer>
+        <HeroContainer id="home">
             <HeroImage src="/images/image1.jpg" alt="hero-image" />
             <HeroWrapper>
 
