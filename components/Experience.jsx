@@ -23,7 +23,7 @@ const Experience = () => {
 
     return (
         <ExpSection>
-            <ExpTitle>The Experience <br /> You will earn</ExpTitle>
+            <ExpTitle>We earn your gold (currency),<br /> you gain experience.</ExpTitle>
             <ExpContainer>
                 <ExpContent>
                     {
@@ -143,7 +143,7 @@ const ImageBox1 = styled.div`
     }
 
     @media screen and (min-width: 1024px) {
-        width: 463px;
+        width: 780px;
         margin-right: 7rem;
     }
 `
@@ -163,11 +163,15 @@ const ImageBox2 = styled.div`
     }
 
     @media screen and (min-width: 768px) {
-        width: 160px;
+        width: 180px;
     }
 
     @media screen and (min-width: 1024px) {
-        width: 220px;
-        top: 3rem;
+        /* width: 220px;
+        top: 3rem; */
+
+        width: 380px;
+        top: 4rem;
+        right: -3rem;
     }
 `

@@ -142,6 +142,15 @@ const Container = styled.nav`
     @media screen and (min-width: 768px) {
         height: calc(3rem + 1.5rem);
     }
+
+    @media screen and (min-width: 1024px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen and (min-width: 1200px) {
+        max-width: 1024px;
+    }
 `
 
 const NavLogo = styled.a`

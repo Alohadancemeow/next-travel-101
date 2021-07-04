@@ -50,10 +50,11 @@ const Video = () => {
 
     return (
         <VideoSection>
-            <VideoTitle>Video section</VideoTitle>
+            <VideoTitle>Video for you</VideoTitle>
             <VideoContainer>
                 <VideoDescription>
-                    Find out more with our video of the most beautiful and pleasant places for you and your family.
+                    Find out more with our video of the most beautiful and pleasant places for you and your family, <br />
+                    And your housekeeper.
                 </VideoDescription>
 
                 <VideoContent>
@@ -87,7 +88,7 @@ const VideoSection = styled.section`
 const VideoTitle = styled.h2`
     font-size: 1.25rem;
     text-align: center;
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: hsl(190, 64%, 18%);
     margin-bottom: 2rem;
 `

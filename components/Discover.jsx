@@ -47,7 +47,10 @@ const Discover = () => {
 
     return (
         <DiscoverSection id="discover">
-            <DiscoverTitle>Discover <br /> section</DiscoverTitle>
+            <DiscoverTitle>
+                Discover <br />
+                <p>You can go anywhere you want, <br /> But don't forget your toothbrush.</p>
+            </DiscoverTitle>
             <DiscoverContainer>
                 <Swiper
                     effect='coverflow'
@@ -102,8 +105,15 @@ const DiscoverTitle = styled.h2`
     font-size: 1.25rem;
     color: hsl(190, 64%, 18%);
     text-align: center;
-    text-transform: capitalize;
+    text-transform: uppercase;
     margin-bottom: 2rem;
+
+    p {
+        margin-top: .75rem;
+        text-transform: none;
+        font-size: .75rem;
+        font-weight: 500;
+    }
 `
 
 const DiscoverContainer = styled.div`

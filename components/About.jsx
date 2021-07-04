@@ -10,7 +10,7 @@ const About = () => {
 
                 <AboutContent>
                     <AboutTitle>
-                        More Information <br /> About The Best Beaches
+                        More Information <br /> About The Best Places
                     </AboutTitle>
                     <AboutDescrription>
                         You can find the most beautiful and pleasant places at the best
@@ -18,7 +18,7 @@ const About = () => {
                         your place now.
                     </AboutDescrription>
                     <AboutButton>
-                        <Link href="#">
+                        <Link href="#discover">
                             <a>Reserve a place</a>
                         </Link>
                     </AboutButton>

@@ -58,7 +58,10 @@ const Places = () => {
 
     return (
         <PlaceSection>
-            <PleceTitle>Choose your place</PleceTitle>
+            <PleceTitle>
+                Choose your place
+                <p>When you're in a good place, we're happy for you.</p>
+            </PleceTitle>
             <PlaceContainer>
                 {
                     placeData.map(item => (
@@ -105,8 +108,15 @@ const PleceTitle = styled.h2`
     font-size: 1.25rem;
     color: hsl(190, 64%, 18%);
     text-align: center;
-    text-transform: capitalize;
+    text-transform: uppercase;
     margin-bottom: 2rem;
+
+    p {
+        margin-top: .75rem;
+        text-transform: none;
+        font-size: .75rem;
+        font-weight: 500;
+    }
 `
 
 const PlaceContainer = styled.div`

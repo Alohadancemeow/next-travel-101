@@ -19,7 +19,7 @@ const Contact = () => {
                         <Contactinput
                             disabled
                             type="text"
-                            placeholder="rabbit.bot@outlook.com"
+                            placeholder="Please leave me alone"
                         />
                         <ContactButton>
                             Get in touch

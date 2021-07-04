@@ -13,7 +13,7 @@ const Hero = () => {
                     <Heading>Discover your place</Heading>
                     <Content>
                         <span>Explore The <br /> Best </span>
-                        <strong>Beautiful <br /> Beaches</strong>
+                        <strong>Beautiful <br /> Places</strong>
                     </Content>
                     <ExploreBtn>
                         <Link href="#about">
@@ -148,6 +148,8 @@ const Heading = styled.span`
     font-weight: 600;
     margin-bottom: 0.75rem;
     color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 `
 
 const Content = styled.h1`
@@ -156,6 +158,9 @@ const Content = styled.h1`
     font-weight: 500;
     margin-bottom: 2.5rem;
 
+    @media screen and (min-width: 1024px) {
+        font-size: 4rem;
+    }
 `
 
 const ExploreBtn = styled.button`
@@ -259,7 +264,7 @@ const InfoImage = styled.div`
         transition: 0.3s;
 
         &:hover {
-            transform: scale(1.5);
+            transform: scale(1.2);
         }
     }
 `

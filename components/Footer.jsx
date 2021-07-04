@@ -35,7 +35,9 @@ const Footer = () => {
                                 </a>
                             </Link>
                         </FooterDataHeading>
-                        <FooterDataDesc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem facilis modi vel.</FooterDataDesc>
+                        <FooterDataDesc>
+                            Located ‎‎about‎‎ 650 km. from ‎‎Bangkok, Separated from‎‎ Nakhon Phanom province on September ‎‎27,‎‎ ‎‎1982, it is‎‎ the 73rd province in Thailand.
+                        </FooterDataDesc>
                         <FooterDataSocial>
                             <FooterDataSocialItem>
                                 <Link href="https://www.facebook.com/">
