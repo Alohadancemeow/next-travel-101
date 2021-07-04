@@ -8,50 +8,50 @@ const Places = () => {
     const placeData = [
         {
             id: 1,
-            imageUrl: '/images/image3.jpg',
+            imageUrl: '/images/v-places/p-image1.jpg',
             rate: '5.0',
             title: 'Muk',
-            subTitle: 'Mukdahan',
+            subTitle: 'Glass tower',
             price: '฿1,500'
         },
         {
             id: 2,
-            imageUrl: '/images/image3.jpg',
+            imageUrl: '/images/v-places/p-image2.jpg',
             rate: '5.0',
-            title: 'Muk',
-            subTitle: 'Mukdahan',
+            title: 'Wan Yai',
+            subTitle: 'Ghost Christ Wat Song Kon‎',
             price: '฿1,500'
         },
         {
             id: 3,
-            imageUrl: '/images/image3.jpg',
+            imageUrl: '/images/v-places/p-image3.jpg',
             rate: '5.0',
             title: 'Muk',
-            subTitle: 'Mukdahan',
+            subTitle: '‎Thai-Lao Friendship Bridge',
             price: '฿1,500'
         },
         {
             id: 4,
-            imageUrl: '/images/image3.jpg',
+            imageUrl: '/images/v-places/p-image4.jpg',
             rate: '5.0',
-            title: 'Muk',
-            subTitle: 'Mukdahan',
+            title: 'Kham Cha E',
+            subTitle: '‎‎Phu Pha San',
             price: '฿1,500'
         },
         {
             id: 5,
-            imageUrl: '/images/image3.jpg',
+            imageUrl: '/images/v-places/p-image5.jpg',
             rate: '5.0',
-            title: 'Muk',
-            subTitle: 'Mukdahan',
+            title: 'Kham Cha E',
+            subTitle: 'Huai Kantai Yai Reservoir',
             price: '฿1,500'
         },
         {
             id: 6,
-            imageUrl: '/images/image3.jpg',
+            imageUrl: '/images/v-places/p-image6.jpg',
             rate: '5.0',
             title: 'Muk',
-            subTitle: 'Mukdahan',
+            subTitle: 'Wat Phu Manorom‎‎',
             price: '฿1,500'
         },
     ]
@@ -78,12 +78,12 @@ const Places = () => {
                                 <PlaceData>
                                     <PlaceTitle>{item.title}</PlaceTitle>
                                     <PlaceSubTitle>{item.subTitle}</PlaceSubTitle>
-                                    <PlacePrice>{item.price}</PlacePrice>
+                                    {/* <PlacePrice>{item.price}</PlacePrice> */}
                                 </PlaceData>
                             </PlaceContent>
-                            <PlaceButton>
+                            {/* <PlaceButton>
                                 <i className="ri-arrow-right-line"></i>
-                            </PlaceButton>
+                            </PlaceButton> */}
                         </PlaceCard>
                     ))
                 }
@@ -159,7 +159,7 @@ const PlaceCard = styled.div`
      }
 
      &:hover img {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 `
 

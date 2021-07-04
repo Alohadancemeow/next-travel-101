@@ -60,7 +60,7 @@ const Video = () => {
                 <VideoContent>
                     <video id="video-file" >
                         <source
-                            src="/videos/video.mp4"
+                            src="/videos/mukdahan.mp4"
                             type="video/mp4"
                             muted />
                     </video>

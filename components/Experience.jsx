@@ -41,7 +41,7 @@ const Experience = () => {
                         <img src="/images/image10.jpg" alt="exp-image" />
                     </ImageBox1>
                     <ImageBox2>
-                        <img src="/images/image3.jpg" alt="exp-image" />
+                        <img src="/images/v-images/v-image1.jpg" alt="exp-image" />
                     </ImageBox2>
                 </ExpImageBox>
 
@@ -163,15 +163,12 @@ const ImageBox2 = styled.div`
     }
 
     @media screen and (min-width: 768px) {
-        width: 180px;
+        width: 160px;
     }
 
     @media screen and (min-width: 1024px) {
-        /* width: 220px;
-        top: 3rem; */
-
-        width: 380px;
-        top: 4rem;
+        width: 350px;
+        top: 3rem;
         right: -3rem;
     }
 `
